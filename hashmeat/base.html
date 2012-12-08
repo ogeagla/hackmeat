@@ -4,24 +4,40 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
     <style type="text/css">
 
-      body {
-      	font: 10px sans-serif;
-      }
+	body {
+		font: 10px sans-serif;
+	}
 
-      .axis path,
-      .axis line {
-      	fill: none;
-      	stroke: #000;
-      	shape-rendering: crispEdges;
-      }
+	.axis path,
+	.axis line {
+		fill: none;
+		stroke: #000;
+		shape-rendering: crispEdges;
+	}
 
-      .bar {
-      	fill: steelblue;
-      }
+	.bar {
+		fill: steelblue;
+	}
 
-      .x.axis path {
-      	display: none;
-      }
+	.x.axis path {
+		display: none;
+	}
+
+	svg {
+		width: 960px;
+		height: 500px;
+	}
+
+	#states path, #state-centroids circle {
+		fill: #ccc;
+		stroke: #fff;
+		stroke-width: 1.5px;
+	}
+
+	#state-centroids circle {
+		fill: steelblue;
+		fill-opacity: .8;
+	}
 
     </style> 
     
@@ -29,10 +45,48 @@
     <script src="http://d3js.org/d3.v3.min.js"></script>
     <script type="text/javascript">
       $(document).ready(function(){
-      	go();
+      	//makeBarChart();
+      	makeMapChart();
       });
+      
+      function makeMapChart() {
+      	// The radius scale for the centroids.
+		var r = d3.scale.sqrt()
+			.domain([0, 1e6])
+			.range([0, 10]);
 
-      function go() {
+		// Our projection.
+		var xy = d3.geo.albersUsa();
+
+		var svg = d3.select("#mapChart").append("svg");
+		svg.append("g").attr("id", "states");
+		svg.append("g").attr("id", "state-centroids");
+
+		d3.json("us-states.json", function(collection) {
+		  svg.select("#states")
+			.selectAll("path")
+			  .data(collection.features)
+			.enter().append("path")
+			  .attr("d", d3.geo.path().projection(xy));
+		});
+
+		d3.json("us-state-centroids.json", function(collection) {
+		  svg.select("#state-centroids")
+			.selectAll("circle")
+			  .data(collection.features
+			  .sort(function(a, b) { return b.properties.population - a.properties.population; }))
+			.enter().append("circle")
+			  .attr("transform", function(d) { return "translate(" + xy(d.geometry.coordinates) + ")"; })
+			  .attr("r", 0)
+			.transition()
+			  .duration(1000)
+			  .delay(function(d, i) { return i * 50; })
+			  .attr("r", function(d) { return r(d.properties.population); });
+		});
+      	
+      }
+
+      function makeBarChart() {
 	      var margin = {top: 20, right: 20, bottom: 30, left: 40},
 	      width = 960 - margin.left - margin.right,
 	      height = 500 - margin.top - margin.bottom;
@@ -103,6 +157,10 @@
 
     
     <div id="barChart">
+    </div>
+    
+    <div id="mapChart">
+    
     </div>
     
     
