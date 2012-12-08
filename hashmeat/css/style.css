@@ -1,5 +1,5 @@
 .slideImage {
-    height: 700px;
+    height: 200px;
 }
 
 #navbar {
@@ -51,11 +51,33 @@ textarea {
 }
 
 #slide1 {
-	
-	height: 800px;
+	margin: 100px 0 0 0;
+	height: 500px;
+	border: 1px solid black;
+	border-radius: 5px;
 }
 #slide2 {
 	
-	height: 800px;
+	margin: 100px 0 0 0;
+	height: 500px;
+	border: 1px solid black;
+	border-radius: 5px;
 }
+#slide3 {
+	margin: 100px 0 0 0;
+	height: 500px;
+	border: 1px solid black;
+	border-radius: 5px;
+}
+#slide4 {
+	
+	margin: 100px 0 0 0;
+	height: 500px;
+	border: 1px solid black;
+	border-radius: 5px;
+}
+#fakeslide {
 
+	height: 500px;
+
+}
