@@ -45,7 +45,7 @@
     <script src="http://d3js.org/d3.v3.min.js"></script>
     <script type="text/javascript">
       $(document).ready(function(){
-      	//makeBarChart();
+      	makeBarChart();
       	makeMapChart();
       });
       
@@ -61,7 +61,8 @@
 		var svg = d3.select("#mapChart").append("svg");
 		svg.append("g").attr("id", "states");
 		svg.append("g").attr("id", "state-centroids");
-
+		var testJson1 = d3.json("us-states.json");
+		var testJson2 = d3.json("us-state-centroids.json");
 		d3.json("us-states.json", function(collection) {
 		  svg.select("#states")
 			.selectAll("path")
