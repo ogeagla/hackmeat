@@ -24,7 +24,7 @@
     position: relative;
     width: 47px;
     height: 22px;
-    background: url(../images/social-buttons.png) no-repeat -282px 0;
+    background: url(img/test.jpeg) no-repeat -282px 0;
 /*    border-top: 4px solid #F3F0E9;*/
     padding: 18px 0px 12px 0px;
     margin: 0 10px 0 10px;
@@ -49,3 +49,13 @@ body {
 textarea {
     color: #444;
 }
+
+#slide1 {
+	
+	height: 800px;
+}
+#slide2 {
+	
+	height: 800px;
+}
+
