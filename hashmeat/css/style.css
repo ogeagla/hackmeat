@@ -24,7 +24,9 @@
     position: relative;
     width: 47px;
     height: 22px;
-    background: url(img/test.jpeg) no-repeat -282px 0;
+    border: 2px solid black;
+    border-radius: 5px;
+    /*background: url(img/test.jpeg) no-repeat -282px 0;*/
 /*    border-top: 4px solid #F3F0E9;*/
     padding: 18px 0px 12px 0px;
     margin: 0 10px 0 10px;
@@ -50,11 +52,23 @@ textarea {
     color: #444;
 }
 
+#twitternav {
+	border: 1px solid black;
+	border-radius: 2px;
+  	position: fixed;
+  	right: 0;
+  	
+  	width: 150px;
+  	height: 450px;
+  	margin-top: -80px;
+}
+
 #slide1 {
 	margin: 100px 0 0 0;
 	height: 500px;
 	border: 1px solid black;
 	border-radius: 5px;
+	width: 1600px;
 }
 #slide2 {
 	
@@ -62,12 +76,14 @@ textarea {
 	height: 500px;
 	border: 1px solid black;
 	border-radius: 5px;
+	width: 1600px;
 }
 #slide3 {
 	margin: 100px 0 0 0;
 	height: 500px;
 	border: 1px solid black;
 	border-radius: 5px;
+	width: 1600px;
 }
 #slide4 {
 	
@@ -75,9 +91,11 @@ textarea {
 	height: 500px;
 	border: 1px solid black;
 	border-radius: 5px;
+	width: 1600px;
 }
 #fakeslide {
 
 	height: 500px;
+	width: 1600px;
 
 }
