@@ -1,12 +1,47 @@
 
 jQuery(function() {
 
-  var tweets = {main: "Food monopolies affect all of us!", 
-                companies: "4 companies product 70% of pork.",
-                health: "Diabetes, antibiotic resistance, obesity - brought to you by food monopolies.",
-                pollution: "Meat monopolies are shitty.",
-                economy: "You can't support farmers if you're taking money from food monopolies.",
-                tags: "See what people are tweeting about meat."};
+  var tweets = {  default: "Food monopolies affect all of us!", 
+                  conglomeration: "4 companies product 70% of pork.",
+                  health: "Diabetes, antibiotic resistance, obesity - brought to you by food monopolies.",
+                  pollution: "Meat monopolies are shitty.",
+                  power: "You can't support farmers if you're taking money from food monopolies.",
+                  tags: "See what people are tweeting about meat."};
+
+  $(".nav").click(function(){
+      var sid = $(this).attr("title");
+      //window.location.hash = sid;
+      switchTwitterMessage(sid);
+    });
+
+  $(document).scroll(function(){
+      var sid = $("body").find(".current").attr("title");
+      switchTwitterMessage(sid);
+    });
+
+    function switchTwitterMessage(sid){
+      var customMessage;
+      switch(sid){
+        case "#conglomeration":
+          customMessage = tweets['conglomeration'];
+          break;
+        case "#power":
+          customMessage = tweets['power'];
+          break;
+        case "#health":
+          customMessage = tweets['health'];
+          break;
+        case "#pollution":
+          customMessage = tweets['pollution'];        
+          break;
+        default:
+          customMessage = tweets['default'];
+          break;
+      }
+      console.log(customMessage);
+      var handles = get_reps_handles();
+      bind_tweet_button(customMessage, handles);
+    }
 
   function get_representatives(position) {
     urlStr1 = "http://services.sunlightlabs.com/api/legislators.allForLatLong.json";
@@ -68,7 +103,7 @@ jQuery(function() {
 
   function get_reps_handles() {
     var handles = jQuery("#reps").data("handles");
-    alert(handles);
+    //alert(handles);
   }
 
   function bind_tweet_button(message, handles){
