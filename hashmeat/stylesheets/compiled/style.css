@@ -12,10 +12,10 @@ textarea {
   height: 200px; }
 
 #navbar {
-  width: 600px;
+  width: 400px;
   position: fixed;
   top: 10px;
-  left: 10px;
+  left: 650px;
   z-index: 10;
   /* background: #F3F0E9; */ }
 
@@ -23,13 +23,14 @@ textarea {
   margin: 0 auto;
   width: 100%; }
   #navcenter a {
-    color: #CAC7C1;
+    color: #333333;
     display: block;
     float: left;
     position: relative;
     width: 47px;
     height: 22px;
-    border: 2px solid black;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.4);
     border-radius: 5px;
     padding: 18px 0px 12px 0px;
     margin: 0 10px 0 10px;
@@ -38,7 +39,7 @@ textarea {
     line-height: 22px;
     text-shadow: white 0 1px 0;
     text-decoration: none;
-    font-family: 'in_the_knowregular', sans-serif; }
+    /*font-family: 'in_the_knowregular', sans-serif;*/ }
     #navcenter a.current {
       color: #615E5A;
       background-position: -329px 0; }
@@ -79,11 +80,11 @@ textarea {
 .slide h1 {
   margin-bottom: 50px; }
 
-.alt {
+.alt, #header, #footer {
   background-color: #DBA887; }
 
-#fakeslide {
-  height: 500px; }
+#footer {
+  height: 300px; }
 
 #zipcodeform {
   display: none; }
@@ -118,3 +119,8 @@ textarea {
 #tweetmsg {
   font-size: 18px;
   margin: 0 0 10px 0; }
+
+.badge {
+  padding: 10px;
+  margin: 10px 10px 0 0;
+  text-align: center; }
