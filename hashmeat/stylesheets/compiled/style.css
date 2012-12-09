@@ -79,11 +79,11 @@ textarea {
 .slide h1 {
   margin-bottom: 50px; }
 
-.alt {
+.alt, #header, #footer {
   background-color: #DBA887; }
 
-#fakeslide {
-  height: 500px; }
+#footer {
+  height: 300px; }
 
 #zipcodeform {
   display: none; }
@@ -118,3 +118,8 @@ textarea {
 #tweetmsg {
   font-size: 18px;
   margin: 0 0 10px 0; }
+
+.badge {
+  padding: 10px;
+  margin: 10px 10px 0 0;
+  text-align: center; }
