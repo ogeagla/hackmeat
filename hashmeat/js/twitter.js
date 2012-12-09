@@ -6,7 +6,10 @@ jQuery(function() {
                   health: "Diabetes, antibiotic resistance, obesity - brought to you by food monopolies.",
                   pollution: "Meat monopolies are shitty.",
                   power: "You can't support farmers if you're taking money from food monopolies.",
-                  tags: "See what people are tweeting about meat."};
+                  wordcloud: "See what people are tweeting about meat.",
+                  economy: "It's the economy stupid!",
+                  policy: "Time to break up the monopolies with policy.",
+                  badges: "Show your support for better meat production.",};
 
   $(".nav").click(function(){
       var sid = $(this).attr("title");
@@ -40,7 +43,7 @@ jQuery(function() {
         case "#power":
           customMessage = tweets['policy'];
           break;
-        case "#health":
+        case "#wordcloud":
           customMessage = tweets['wordcloud'];
           break;
         case "#pollution":
