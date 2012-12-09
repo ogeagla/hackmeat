@@ -1,0 +1,60 @@
+body {
+  background: #FAF8F3; }
+
+textarea {
+  color: #444; }
+
+.slideImage {
+  height: 200px; }
+
+#navbar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  /* background: #F3F0E9; */ }
+
+#navcenter {
+  margin: 0 auto;
+  width: 960px; }
+  #navcenter a {
+    color: #CAC7C1;
+    display: block;
+    float: left;
+    position: relative;
+    width: 47px;
+    height: 22px;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 18px 0px 12px 0px;
+    margin: 0 10px 0 10px;
+    text-align: center;
+    font-size: 18px;
+    line-height: 22px;
+    text-shadow: white 0 1px 0; }
+    #navcenter a.current {
+      color: #615E5A;
+      background-position: -329px 0; }
+  #navcenter a, #navcenter a:visited, #navcenter a:active {
+    text-decoration: none; }
+
+#twitternav {
+  border: 1px solid black;
+  border-radius: 2px;
+  position: fixed;
+  right: 0;
+  width: 150px;
+  height: 450px;
+  margin-top: -80px; }
+
+#slide1, #slide2, #slide3, #slide4 {
+  margin: 100px 0 0 0;
+  height: 500px;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 1600px; }
+
+#fakeslide {
+  height: 500px;
+  width: 1600px; }
