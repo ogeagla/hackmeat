@@ -3,7 +3,7 @@ jQuery(function() {
 
   function get_representatives(position) {
 
-    jQuery.ajax({
+    /*jQuery.ajax({
       type: 'GET',
       url: 'http://services.sunlightlabs.com/api/',
       jsonp: 'legislators.allForLatLong.json',
@@ -12,7 +12,23 @@ jQuery(function() {
       success: function(data) {
         return data;
       }
-    });
+    });*/
+    urlStr1 = "http://services.sunlightlabs.com/api/legislators.allForLatLong.json";
+	var lat = position.coords.latitude;
+	var long = position.coords.longitude;
+	var akey = "0eb72fee736c4d518acabf303ad90dce";
+	var bullShitJsonpParameter = "?";
+	urlStr1 = urlStr1 + "?apikey=" + akey + "&latitude=" + lat + "&longitude=" + long + "&jsonp=?";
+	
+	/*$.getJSON(urlStr1,{apikey: akey, latitude: lat, longitude : long, jsonp : bullShitJsonpParameter}, function(data) {
+		alert("works");
+	});*/
+	//http://services.sunlightlabs.com/api/legislators.allForLatLong.json?apikey=0eb72fee736c4d518acabf303ad90dce&latitude=35.778788&longitude=-78.787805&jsonp=jQuery16404366799786632103_1355022158589&_=1355022165324
+	$.getJSON(urlStr1, 
+	function(data) {
+		write_representatives(data);
+		bind_tweet_button("test_message", get_reps_data(data));
+	});
   }
 
   function success(position) {
@@ -27,7 +43,7 @@ jQuery(function() {
   
     var reps = jQuery("#reps");
     reps.append(position.coords.latitude + " " + position.coords.longitude);
-    //get_representatives(position);
+    get_representatives(position);
 
   }
 
@@ -37,8 +53,8 @@ jQuery(function() {
   }
 
   function write_representatives(json) {
-    var obj = jQuery.parseJSON(json);
-    legislators = obj.response.legislators;
+    //var obj = jQuery.parseJSON(json);
+    legislators = json.response.legislators;
     for (var i = 0; i < legislators.length; i++) {
       var legislator = legislators[i].legislator;
       var rep = jQuery("<div class='rep'></div>").appendTo("#reps");
@@ -49,12 +65,10 @@ jQuery(function() {
       rep.append("<a href='http://www.twitter.com/"+legislator.twitter_id+"' class='twitter'>@"+legislator.twitter_id+"</a>");
     }
   }
-  var REPS = '{"response": {"legislators": [{"legislator": {"website": "http://www.gillibrand.senate.gov", "fax": "202-225-1168", "govtrack_id": "412223", "firstname": "Kirsten", "chamber": "senate", "middlename": "E.", "lastname": "Gillibrand", "congress_office": "478 Russell Senate Office Building", "eventful_id": "", "phone": "202-224-4451", "webform": "http://www.gillibrand.senate.gov/contact/", "youtube_url": "http://www.youtube.com/KirstenEGillibrand", "nickname": "", "gender": "F", "district": "Junior Seat", "title": "Sen", "congresspedia_url": "http://www.opencongress.org/wiki/Kirsten_Gillibrand", "in_office": true, "senate_class": "I", "name_suffix": "", "twitter_id": "SenGillibrand", "birthdate": "1966-12-09", "bioguide_id": "G000555", "fec_id": "H6NY20167", "state": "NY", "crp_id": "N00027658", "official_rss": "", "facebook_id": "KirstenGillibrand", "party": "D", "email": "", "votesmart_id": "65147"}}, {"legislator": {"website": "http://www.schumer.senate.gov/", "fax": "202-228-3027", "govtrack_id": "300087", "firstname": "Charles", "chamber": "senate", "middlename": "E.", "lastname": "Schumer", "congress_office": "322 Hart Senate Office Building", "eventful_id": "", "phone": "202-224-6542", "webform": "http://www.schumer.senate.gov/Contact/contact_chuck.cfm", "youtube_url": "http://www.youtube.com/senatorschumer", "nickname": "Chuck", "gender": "M", "district": "Senior Seat", "title": "Sen", "congresspedia_url": "http://www.opencongress.org/wiki/Charles_Schumer", "in_office": true, "senate_class": "III", "name_suffix": "", "twitter_id": "chuckschumer", "birthdate": "1950-11-23", "bioguide_id": "S000148", "fec_id": "S8NY00082", "state": "NY", "crp_id": "N00001093", "official_rss": "", "facebook_id": "chuckschumer", "party": "D", "email": "", "votesmart_id": "26976"}}, {"legislator": {"website": "http://maloney.house.gov/", "fax": "202-225-4709", "govtrack_id": "400251", "firstname": "Carolyn", "chamber": "house", "middlename": "B.", "lastname": "Maloney", "congress_office": "2332 Rayburn House Office Building", "eventful_id": "", "phone": "202-225-7944", "webform": "http://maloney.house.gov/index.php?option=com_email_form&Itemid=73", "youtube_url": "http://www.youtube.com/carolynbmaloney", "nickname": "", "gender": "F", "district": "14", "title": "Rep", "congresspedia_url": "http://www.opencongress.org/wiki/Carolyn_Maloney", "in_office": true, "senate_class": "", "name_suffix": "", "twitter_id": "carolynbmaloney", "birthdate": "1948-02-19", "bioguide_id": "M000087", "fec_id": "H2NY14037", "state": "NY", "crp_id": "N00000078", "official_rss": "", "facebook_id": "RepCarolynMaloney", "party": "D", "email": "", "votesmart_id": "26978"}}]}}'
-  write_representatives(REPS);
 
   function get_reps_handles(json) {
-    var obj = jQuery.parseJSON(json);
-    legislators = obj.response.legislators;
+    //var obj = jQuery.parseJSON(json);
+    legislators = json.response.legislators;
     handles = "";
     for (var i = 0; i < legislators.length; i++) {
       var legislator = legislators[i].legislator;
@@ -68,7 +82,7 @@ jQuery(function() {
       window.open("http://twitter.com/share?url=http://www.hashmeat.org&hashtags=hashmeat&text="+encodeURI(message+" "+handles),"tweetwindow","menubar=1,resizable=1,scrollbar=1,height=400, width=560, left=200, top=200");
     });
   }
-  bind_tweet_button("MESSAGE HERE", get_reps_handles(REPS));
+  //bind_tweet_button("MESSAGE HERE", "");
 
   jQuery(function(){
     jQuery('#twitterstream').liveTwitter('"bacon" :(', {limit: 8, imageSize: 32}, function(){

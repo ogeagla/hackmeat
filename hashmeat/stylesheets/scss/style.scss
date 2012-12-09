@@ -1,5 +1,5 @@
 body {
-    background: #FAF8F3;
+    background: #E8DDBD;
 }
 
 textarea {
@@ -23,7 +23,7 @@ textarea {
 
 #navcenter {
     margin: 0 auto;
-    width: 960px;
+    width: 100%;
     a{
         color: #CAC7C1;
         display: block;
@@ -54,26 +54,30 @@ textarea {
 
 
 #twitternav {
-	border: 1px solid black;
-	border-radius: 2px;
+	border: 3px solid #4F7659;
+	border-radius: 5px;
   	position: fixed;
   	right: 0;
-  	
   	width: 150px;
   	height: 450px;
   	margin-top: -80px;
+    background-color: #A9B79E;
 }
 
-#slide1, #slide2, #slide3, #slide4 {
+#slide1, #slide3 {
 	margin: 100px 0 0 0;
 	height: 500px;
-	border: 1px solid black;
-	border-radius: 5px;
-	width: 1600px;
+	width: 100%;
+}
+
+#slide2, #slide4{
+    margin: 100px 0 0 0;
+    height: 500px;
+    width: 100%;
+    background-color: #DBA887;
 }
 
 #fakeslide {
-
 	height: 500px;
 	width: 1600px;
 
