@@ -89,7 +89,7 @@ jQuery(function() {
   bind_correct_links();
 
   jQuery(function(){
-    jQuery('#twitterstream').liveTwitter('bacon', {limit: 4, imageSize: 32, rate: 1000}, function(){
+    jQuery('#twitterstream').liveTwitter('hashmeat', {limit: 4, imageSize: 32, rate: 1000}, function(){
     });
   });
 
