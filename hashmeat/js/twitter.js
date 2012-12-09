@@ -1,5 +1,5 @@
 
-$(function() {
+jQuery(function() {
 
   function get_representatives(position) {
 
@@ -69,6 +69,12 @@ $(function() {
     });
   }
   bind_tweet_button("MESSAGE HERE", get_reps_handles(REPS));
+
+  jQuery(function(){
+    jQuery('#twitterstream').liveTwitter('"bacon" :(', {limit: 8, imageSize: 32}, function(){
+      jQuery('#twitterstream .loading').remove();
+    });
+  });
 
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(success, error);
