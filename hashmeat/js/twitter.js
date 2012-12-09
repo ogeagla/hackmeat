@@ -34,6 +34,18 @@ jQuery(function() {
         case "#pollution":
           customMessage = tweets['pollution'];        
           break;
+        case "#conglomeration":
+          customMessage = tweets['economy'];
+          break;
+        case "#power":
+          customMessage = tweets['policy'];
+          break;
+        case "#health":
+          customMessage = tweets['tweets'];
+          break;
+        case "#pollution":
+          customMessage = tweets['badges'];        
+          break;
         default:
           customMessage = tweets['default'];
           break;
