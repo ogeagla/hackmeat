@@ -71,10 +71,10 @@ textarea {
     float: right; }
 
 #introduction, .slide {
-  margin: 100px 0 0 0;
   padding: 50px 450px 50px 50px;
   height: 500px;
-  /*width: 100%;*/ }
+  /*width: 100%;*/
+  background-color: #EADEBA; }
 
 .slide h1 {
   margin-bottom: 50px; }
