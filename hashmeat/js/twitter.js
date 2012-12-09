@@ -3,7 +3,7 @@ jQuery(function() {
 
   var tweets = {main: "Food monopolies affect all of us!", 
                 companies: "4 companies product 70% of pork.",
-                health: "Diabetes, antibiotic resistance, obesity - brought to you by food monopolies."
+                health: "Diabetes, antibiotic resistance, obesity - brought to you by food monopolies.",
                 pollution: "Meat monopolies are shitty.",
                 economy: "You can't support farmers if you're taking money from food monopolies.",
                 tags: "See what people are tweeting about meat."};
