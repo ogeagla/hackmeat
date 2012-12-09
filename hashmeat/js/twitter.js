@@ -36,6 +36,8 @@ jQuery(document).ready(function() {
     s.html("failed");
   }
 
+  //jQuery('#tweet-button')
+
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(success, error);
   } else {
