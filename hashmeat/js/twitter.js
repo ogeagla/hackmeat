@@ -41,7 +41,7 @@ jQuery(function() {
           customMessage = tweets['policy'];
           break;
         case "#health":
-          customMessage = tweets['tweets'];
+          customMessage = tweets['wordcloud'];
           break;
         case "#pollution":
           customMessage = tweets['badges'];        
