@@ -22,6 +22,15 @@ jQuery(function() {
       switchTwitterMessage(sid);
     });
 
+  $("#farmers").click(function(){
+      console.log($(this).attr("src"));
+      if($(this).attr("src")=="img/farmers/contract_policy1-01.png"){
+        $(this).attr("src","img/farmers/contract_policy2-01.png");
+      }else{
+        $(this).attr("src","img/farmers/contract_policy1-01.png");
+      }
+  });
+
     function switchTwitterMessage(sid){
       var customMessage;
       switch(sid){
