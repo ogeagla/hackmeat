@@ -45,9 +45,12 @@ jQuery(function() {
       var legislator = legislators[i].legislator;
       var rep = jQuery("<div class='rep'></div>").appendTo("#reps");
       bioguide_id = legislator.bioguide_id;
-      rep.append("<img class='headshot' src='img/congress/small/"+bioguide_id+".jpg'>")
-      rep.append("<span class='name'>"+legislator.title+". "+legislator.lastname+" ("+legislator.party+")</span>");
+      rep.append("<img class='headshot' src='img/congress/small/"+bioguide_id+".jpg'>");
+      rep.append("<div class='repinfo'>");
+      rep.append("<span class='name'>"+legislator.title+" "+legislator.lastname+" ("+legislator.party+")</span>");
+      rep.append("</div>");
     }
+    $("#twitternav").addClass("withreps");
   }
 
   function get_reps_handles(json) {
@@ -56,8 +59,9 @@ jQuery(function() {
     handles = "";
     for (var i = 0; i < legislators.length; i++) {
       var legislator = legislators[i].legislator;
-      if (legislator.twitter_id != "")
+      if(legislator.twitter_id != null || legislator.twitter_id != ""){
         handles += "@" + legislator.twitter_id + " ";
+      }
     }
     return handles;
   }

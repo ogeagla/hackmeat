@@ -61,10 +61,30 @@ textarea {
 	border-radius: 5px;
   	position: fixed;
   	right: 25px;
-    top: 85px;
-  	width: 250px;
+    top: 65px;
+  	width: 300px;
   	height: 450px;
     background-color: #A9B79E;
+    overflow-y:hidden;
+    padding: 5px;
+    &.withreps{
+        height: 550px;
+    }
+    #reps{
+        display:inline-block;
+        .rep{
+            width: 90px;
+            padding: 5px;
+            display: inline-block;
+            float:right;
+            .repinfo{
+                display: block;
+            }
+        }
+    }
+    #zip-btn{
+        float: right;
+    }
 }
 
 #introduction, #slide1, #slide2, #slide3, #slide4 {
