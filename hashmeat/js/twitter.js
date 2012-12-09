@@ -16,7 +16,6 @@ jQuery(function() {
       //window.location.hash = sid;
       switchTwitterMessage(sid);
     });
-
   $(document).scroll(function(){
       var sid = $("body").find(".current").attr("title");
       switchTwitterMessage(sid);
@@ -91,7 +90,7 @@ jQuery(function() {
     $.getJSON(urlStr1, 
     function(data) {
       var handles = write_representatives(data);
-      bind_tweet_button(tweets["main"], handles);
+      bind_tweet_button(tweets["default"], handles);
     });
   }
 
@@ -101,7 +100,7 @@ jQuery(function() {
   }
 
   function errorGeo(msg) {
-    bind_tweet_button(tweets["main"], "");
+    bind_tweet_button(tweets["default"], "");
   }
 
   function write_representatives(json) {
