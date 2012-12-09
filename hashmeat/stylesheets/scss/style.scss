@@ -62,9 +62,19 @@ textarea {
   	position: fixed;
   	right: 25px;
     top: 85px;
-  	width: 250px;
+  	width: 300px;
   	height: 450px;
     background-color: #A9B79E;
+    #reps{
+        .rep{
+            width: 100px;
+            padding: 5px;
+            display: inline-block;
+            .repinfo{
+                display: block;
+            }
+        }
+    }
 }
 
 #introduction, #slide1, #slide2, #slide3, #slide4 {
