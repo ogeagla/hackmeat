@@ -1,5 +1,9 @@
 body {
-  background: #E8DDBD; }
+  background: #E8DDBD;
+  width: 100%;
+  font-family: 'in_the_knowregular', sans-serif; }
+  body h1, body h2 {
+    font-family: 'in_the_knowregular', sans-serif; }
 
 textarea {
   color: #444; }
@@ -8,10 +12,10 @@ textarea {
   height: 200px; }
 
 #navbar {
-  width: 100%;
+  width: 600px;
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 10px;
+  left: 10px;
   z-index: 10;
   /* background: #F3F0E9; */ }
 
@@ -32,34 +36,33 @@ textarea {
     text-align: center;
     font-size: 18px;
     line-height: 22px;
-    text-shadow: white 0 1px 0; }
+    text-shadow: white 0 1px 0;
+    text-decoration: none;
+    font-family: 'in_the_knowregular', sans-serif; }
     #navcenter a.current {
       color: #615E5A;
       background-position: -329px 0; }
-  #navcenter a, #navcenter a:visited, #navcenter a:active {
-    text-decoration: none; }
+    #navcenter a:visited, #navcenter a:active {
+      text-decoration: none; }
 
 #twitternav {
   border: 3px solid #4F7659;
   border-radius: 5px;
   position: fixed;
-  right: 0;
-  width: 150px;
+  right: 25px;
+  top: 85px;
+  width: 250px;
   height: 450px;
-  margin-top: -80px;
   background-color: #A9B79E; }
 
-#slide1, #slide3 {
+#introduction, #slide1, #slide2, #slide3, #slide4 {
   margin: 100px 0 0 0;
+  padding: 100px;
   height: 500px;
   width: 100%; }
 
-#slide2, #slide4 {
-  margin: 100px 0 0 0;
-  height: 500px;
-  width: 100%;
+.alt {
   background-color: #DBA887; }
 
 #fakeslide {
-  height: 500px;
-  width: 1600px; }
+  height: 500px; }
