@@ -84,3 +84,8 @@ textarea {
 
 #zipcodeform {
   display: none; }
+
+.badge textarea {
+  height: 160px;
+  width: 150px;
+  margin: 10px; }
