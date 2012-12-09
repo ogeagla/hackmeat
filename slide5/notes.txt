@@ -1,0 +1,13 @@
+Slide 5
+
+shows correlation between consolidation in the hog processing industry and stagnation in the Iowa rural economy
+
+slide5/slide5_*.png
+animated, maybe 1 s/image?
+
+Caption:
+In the Iowa hog industry, farmers have been pressured to merge due to consolidation by meatpackers. As national market share of the top four hog packers rose over a 40% threshold, the rural economy in counties with the largest hog farms shrank.
+
+Citation:
+Factory Farm Nation: How American Turned Its Livestock Farms into Factories (2010). Food & Water Watch. http://www.foodandwaterwatch.org/reports/factory-farm-nation/
+USDA GIPSA, Census, BEA
