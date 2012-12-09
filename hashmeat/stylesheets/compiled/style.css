@@ -50,14 +50,14 @@ textarea {
   border-radius: 5px;
   position: fixed;
   right: 25px;
-  top: 65px;
+  top: 50px;
   width: 300px;
   height: 450px;
   background-color: #A9B79E;
   overflow-y: hidden;
   padding: 5px; }
   #twitternav.withreps {
-    height: 550px; }
+    height: 675px; }
   #twitternav #reps {
     display: inline-block; }
     #twitternav #reps .rep {
@@ -99,3 +99,22 @@ textarea {
 
 #tagcloud {
   line-height: 2.5em; }
+
+.rep .name {
+  font-size: 10px; }
+
+.tweet img {
+  float: left;
+  margin-right: 5px; }
+
+.tweet, #tweetmsg {
+  font-size: 11px;
+  line-height: 13px;
+  background-color: rgba(255, 255, 255, 0.3);
+  margin: 4px 0 0 0;
+  padding: 4px;
+  border-radius: 5px; }
+
+#tweetmsg {
+  font-size: 18px;
+  margin: 0 0 10px 0; }
