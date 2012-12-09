@@ -3,12 +3,9 @@ jQuery(document).ready(function() {
 
   function get_representatives(position) {
 
-	urlStr1 = "http://services.sunlightlabs.com/api/legislators.allForLatLong.json";
+	
 	urlStr2 = "http://services.sunlightlabs.com/api/legislators.allForLatLong.json?apikey=0eb72fee736c4d518acabf303ad90dce&latitude=35.778788&longitude=-78.787805&jsonp=?";
-	var lat = 35.778788;
-	var long = -78.787805;
-	var akey = "0eb72fee736c4d518acabf303ad90dce";
-	param2 = "jsonpcallback";
+	
 	
 	/*var jqxhr = $.getJSON(urlStr2, function() {
 	  alert("success");
@@ -23,10 +20,15 @@ jQuery(document).ready(function() {
 	jqxhr.complete(function(){ alert("second complete"); });*/
 	url1 = "http://services.sunlightlabs.com/api/legislators.allForLatLong.json";
 	
-	$.getJSON(urlStr2, function(data) {
-		alert("huh");
+	urlStr1 = "http://services.sunlightlabs.com/api/legislators.allForLatLong.json";
+	var lat = 35.778788;
+	var long = -78.787805;
+	var akey = "0eb72fee736c4d518acabf303ad90dce";
+	var bullShitJsonpParameter = "?";
+	
+	$.getJSON(urlStr1,{apikey: akey, latitude: lat, longitude : long, json : bullShitJsonpParameter} function(data) {
+		alert("works");
 	}
-		
 	);
 	
 	/*$.ajax({
