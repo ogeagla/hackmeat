@@ -29,7 +29,7 @@ jQuery(function() {
     });
   }
 
-  function success(position) {
+  function successGeo(position) {
     var s = jQuery('#status');
 
     if (s.className == 'success') {
@@ -42,7 +42,7 @@ jQuery(function() {
 
   }
 
-  function error(msg) {
+  function errorGeo(msg) {
     bind_tweet_button("MESSAGE HERE", "");
   }
 
@@ -97,7 +97,8 @@ jQuery(function() {
   });
 
   if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(success, error);
+    var a = navigator.geolocation.getCurrentPosition(successGeo, errorGeo);
+    var b = 1;
   } else {
     error('not supported');
   }
