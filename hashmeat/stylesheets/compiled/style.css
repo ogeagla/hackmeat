@@ -71,10 +71,10 @@ textarea {
     float: right; }
 
 #introduction, .slide {
-  margin: 100px 0 0 0;
   padding: 50px 450px 50px 50px;
   height: 500px;
-  /*width: 100%;*/ }
+  /*width: 100%;*/
+  background-color: #EADEBA; }
 
 .slide h1 {
   margin-bottom: 50px; }
@@ -107,10 +107,14 @@ textarea {
   float: left;
   margin-right: 5px; }
 
-.tweet {
+.tweet, #tweetmsg {
   font-size: 11px;
   line-height: 13px;
   background-color: rgba(255, 255, 255, 0.3);
   margin: 4px 0 0 0;
   padding: 4px;
   border-radius: 5px; }
+
+#tweetmsg {
+  font-size: 18px;
+  margin: 0 0 10px 0; }
