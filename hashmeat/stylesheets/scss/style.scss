@@ -5,7 +5,6 @@ body {
     h1, h2{
         font-family: 'in_the_knowregular', sans-serif;
     }
-
 }
 
 textarea {
@@ -84,4 +83,8 @@ textarea {
 	height: 500px;
 	//width: 1600px;
 
+}
+
+#zipcodeform {
+    display: none;
 }
