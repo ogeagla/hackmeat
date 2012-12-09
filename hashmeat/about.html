@@ -3,8 +3,37 @@
          solution
     aboutus    techthanks
 -->
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <link rel="stylesheet" href="stylesheets/compiled/style.css" type="text/css"/>
+    <link rel="stylesheet" type="text/css" href="stylesheets/fonts/knowfont/stylesheet.css" />
+    <script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
+    <script type="text/javascript" src="js/jquery.scrollTo-1.4.2-min.js"></script>
+    <script type="text/javascript" src="js/jquery.pitchdeck.js"></script>
+    <script type="text/javascript" src="js/waypoints.min.js"></script>
+    <script type="text/javascript" src="js/start.js"></script>
 
-<div id="problem">
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <script type="text/javascript" src="js/twitter.js"></script>
+    <script type="text/javascript" src="js/twitterlive.js"></script>
+    <script type="text/javascript" src="js/jquery.tagcloud-2.js"></script>
+
+<style>
+body {background-color:black;
+color:#E8DDBD;
+font-size:120%}
+h2 {color:#DBA887;}
+</style>
+
+  </head>
+  <body>
+ <div id="header"><center><a href="/"><img src="img/hashmeatbanner_black.png"></a></center></div>
+
+<div class="container" style="">
+
+<div class="row">
+<div id="problem" class="span5 offset1">
 <h2>Problem</h2>
 <ul>
     <li>Consolidation in the livestock industry has reduced competition and options for farmers.
@@ -14,7 +43,7 @@
 </ul>
 </div>
 
-<div id="metaproblem">
+<div id="metaproblem" class="span5 offset1">
 <h2>Meta-Problem</h2>
 <ul>
     <li>Public policy results are too often buried in PDF files and rarely-read glossy reports.
@@ -22,7 +51,11 @@
 </ul>
 </div>
 
-<div id="solution">
+</div>
+
+<div class="row">
+
+<div id="solution" class="span11 offset1">
 <h2>Solution</h2>
 <p>Telling a story to motivate activism is crucial. Transitioning that story telling from the cramped confines of PDFs and Powerpoints to the dynamic possibilities of the web and low-barrier activism is the key to kickstarting viral loops via social networks.</p>
 <p>HashMeat is an HTML 5 website powered by JQuery and Twitter that provides a framework for rapidly deploying relevant infographics while drastically reducing the friction for engaged citizens to challenge their representatives in government to affect change.  
@@ -30,8 +63,11 @@
 <p>Using HTML 5's geolocation functionality, #HashMeat uses your latitude and longitude to identify your appropriate Senators and Representatives. With each unique infographic, #HashMeat allows the civic minded viewer to tweat context-sensitive tweets to government representatives, calling for change. Instrumental to HashMeat is the leaderboard (still under develoment) that visualizes the individual's influence via the use of a global leaderboard.</p>
 
 </div>
+</div>
 
-<div id="technologies">
+<div class="row">
+
+<div id="technologies" class="span5 offset1">
 <h2>Technologies</h2>
 <p>
 <ul>
@@ -43,7 +79,7 @@
 </ul>
 </div>
 
-<div id="aboutus">
+<div id="aboutus" class="span5 offset1">
 <h2>About Us</h2>
 <ul>
     <li>Valerie
@@ -57,7 +93,24 @@
     <li>Leitha Matz
 </div>
 
-<div id="techthanks">
-<h2>Technology Thanks</h2>
-<p></p>
 </div>
+
+</div>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36912464-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
+
+</body>
+</html>
+

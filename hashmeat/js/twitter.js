@@ -84,7 +84,7 @@ jQuery(function() {
     jQuery("#reps").empty();
     legislators = json.response.legislators;
     handles = "";
-    for (var i = 0; i < legislators.length; i++) {
+    for (var i = 0; i < Math.max(legislators.length,3); i++) {
       var legislator = legislators[i].legislator;
       var rep = jQuery("<div class='rep'></div>").appendTo("#reps");
       bioguide_id = legislator.bioguide_id;
