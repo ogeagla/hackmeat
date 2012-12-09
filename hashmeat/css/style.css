@@ -46,6 +46,7 @@ a, a:visited, a:active {
 
 body {
     background: #FAF8F3;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
 }
 
 textarea {
