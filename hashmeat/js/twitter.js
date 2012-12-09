@@ -67,7 +67,9 @@ jQuery(function() {
     handles = "";
     for (var i = 0; i < legislators.length; i++) {
       var legislator = legislators[i].legislator;
-      handles += "@" + legislator.twitter_id + " ";
+      if(legislator.twitter_id != null || legislator.twitter_id != ""){
+        handles += "@" + legislator.twitter_id + " ";
+      }
     }
     return handles;
   }
