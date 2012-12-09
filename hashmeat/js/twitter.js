@@ -36,7 +36,12 @@ jQuery(document).ready(function() {
     s.html("failed");
   }
 
-  //jQuery('#tweet-button')
+  function bind_tweet_button(message, handles){
+    jQuery('#tweet-button').click(function() {
+      window.open("http://twitter.com/share?url=http://www.hashmeat.org&hashtags=hashmeat&text="+encodeURI(message+" "+handles),"tweetwindow","menubar=1,resizable=1,scrollbar=1,height=400, width=560, left=200, top=200");
+    });
+  }
+  bind_tweet_button("MESSAGE HERE", "")
 
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(success, error);
