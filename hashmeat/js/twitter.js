@@ -13,7 +13,6 @@ jQuery(function() {
 
   $(".nav").click(function(){
       var sid = $(this).attr("title");
-      //window.location.hash = sid;
       switchTwitterMessage(sid);
     });
   $(document).scroll(function(){
@@ -77,7 +76,7 @@ jQuery(function() {
   	$.getJSON(urlStr1, 
 	  function(data) {
 		  var handles = write_representatives(data);
-		  bind_tweet_button(tweets["main"], handles);
+		  bind_tweet_button(tweets["default"], handles);
 	  });
   }
 
@@ -126,7 +125,6 @@ jQuery(function() {
 
   function get_reps_handles() {
     var handles = jQuery("#reps").data("handles");
-    //alert(handles);
   }
 
   function bind_tweet_button(message, handles){
