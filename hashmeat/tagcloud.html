@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset=utf-8>
+<meta name="viewport" content="width=620">
+<title>HASHMEAT </title>
+<link href="css/bootstrap.css" rel="stylesheet">
+<link rel="stylesheet" href="stylesheets/compiled/style.css" type="text/css"/>
+<script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
+<script type="text/javascript" src="js/twitter.js"></script>
+<script type="text/javascript" src="js/twitterlive.js"></script>
+<script type="text/javascript" src="js/jquery.tagcloud-2.js"></script>
+<script type="text/javascript" src="js/yahoopipes.js"></script>
+</head>
+<body>
+
+<div id="tagcloud"></div>
+
+<script>
+//var tags = [{tag: "computers", count: 56}, {tag: "mobile" , count :12}, {tag: "hashmeat", count: 100}];
+
+
+urlStr = "http://pipes.yahoo.com/pipes/pipe.run?_id=bc70b0517a440a21f72ba84627a754d1&_render=json&q=hashmeat&_callback=?";
+$.getJSON(urlStr,
+function(data) {
+	var count = data.count;
+	tags = [];
+	for(var i = 0; i < count; i++) {
+		var obj = data.value.items[i];
+		
+		var text = obj.content;
+		var countVal = parseInt(obj['y:repeatcount']);
+		
+		var arrObj = {tag: text, count: countVal};
+		tags.push(arrObj);
+
+	}
+	$("#tagcloud").tagCloud(tags);
+	
+});
+
+</script>
+
+</body>
+</html>

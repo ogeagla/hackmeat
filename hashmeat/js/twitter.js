@@ -30,16 +30,8 @@ jQuery(function() {
   }
 
   function successGeo(position) {
-    var s = jQuery('#status');
-
-    if (s.className == 'success') {
-    // not sure why we're hitting this twice in FF, I think it's to do with a cached result coming back    
-    return;
-    }
-  
     var reps = jQuery("#reps");
     get_representatives(position);
-
   }
 
   function errorGeo(msg) {
@@ -93,13 +85,12 @@ jQuery(function() {
   bind_correct_links();
 
   jQuery(function(){
-    jQuery('#twitterstream').liveTwitter('bacon', {limit: 3, imageSize: 32, rate: 1000}, function(){
+    jQuery('#twitterstream').liveTwitter('hashmeat', {limit: 4, imageSize: 32, rate: 1000}, function(){
     });
   });
 
   if (navigator.geolocation) {
-    var a = navigator.geolocation.getCurrentPosition(successGeo, errorGeo);
-    var b = 1;
+    navigator.geolocation.getCurrentPosition(successGeo, errorGeo);
   } else {
     error('not supported');
   }

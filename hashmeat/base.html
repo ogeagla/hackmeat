@@ -13,6 +13,8 @@
     <script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
     <script type="text/javascript" src="js/twitter.js"></script>
     <script type="text/javascript" src="js/twitterlive.js"></script>
+    <script type="text/javascript" src="js/jquery.tagcloud-2.js"></script>
+    <script type="text/javascript" src="js/yahoopipes.js"></script>
 
 
   </head>
@@ -61,7 +63,7 @@
   <div class="slide alt" id="slide1">
     <!--<img src="img/test.jpeg" class="slideImage"/>-->
     <h1>What is the deal?</h1>
-    <iframe src="https://www.youtube.com/embed/FiE63LycZek?html5=1" class="youtube" type="text/html" width="160" height="96" frameborder="0"></iframe>
+    <iframe src="https://www.youtube.com/embed/w828fg2SmuQ?html5=1" class="youtube" type="text/html" width="160" height="96" frameborder="0"></iframe>
   </div>
   <div class="slide" id="slide2">
     <h1>How does this impact health?</h1>
@@ -76,9 +78,61 @@
   <div class="slide" id="slide4">
     <h1>What can I do?</h1>
   </div>
-  <div id="fakeslide">
+
+  <div class="slide alt" id="wordcloud">
+    <h1>What people are saying?</h1>
+    <div id="tagcloud"></div>
+
+<script>
+//var tags = [{tag: "computers", count: 56}, {tag: "mobile" , count :12}, {tag: "hashmeat", count: 100}];
+
+
+urlStr = "http://pipes.yahoo.com/pipes/pipe.run?_id=bc70b0517a440a21f72ba84627a754d1&_render=json&q=hashmeat&_callback=?";
+$.getJSON(urlStr,
+function(data) {
+  var count = data.count;
+  tags = [];
+  for(var i = 0; i < count; i++) {
+    var obj = data.value.items[i];
+    
+    var text = obj.content;
+    var countVal = parseInt(obj['y:repeatcount']);
+    
+    var arrObj = {tag: text, count: countVal};
+    tags.push(arrObj);
+
+  }
+  $("#tagcloud").tagCloud(tags);
+  
+});
+
+</script>
+  </div>
+
+   <div class="slide" id="badges">
+    <h1>Show your support.</h1><p>Add the badge to your blog or site.</p>
+<div class='badge'><img src="img/badges/seal.png"><br/><textarea><a href="http://hashmeat.org" title="#HASHMEAT"><img src="http://hashmeat.org/img/seal.png"></a></textarea></div>
+
+<div class='badge'><img src="img/badges/shitty.png"><br/><textarea><a href="http://hashmeat.org" title="#HASHMEAT"><img src="http://hashmeat.org/img/shitty.png"></a></textarea></div>
+
+<div class='badge'><img src="img/badges/stinks.png"><br/><textarea><a href="http://hashmeat.org" title="#HASHMEAT"><img src="http://hashmeat.org/img/stinks.png"></a></textarea></div>
+  <div id="fakeslide">  </div> 
 
   </div>
+
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36912464-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>
 
 </body>
 </html>
