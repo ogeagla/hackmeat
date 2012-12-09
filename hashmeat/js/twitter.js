@@ -54,7 +54,6 @@ jQuery(function() {
   }
 
   function get_reps_handles(json) {
-    //var obj = jQuery.parseJSON(json);
     legislators = json.response.legislators;
     handles = "";
     for (var i = 0; i < legislators.length; i++) {
@@ -79,7 +78,7 @@ jQuery(function() {
     jQuery('#zipcodeform a').click(function(){
       var zip = jQuery('#zip').val();
       get_representatives_by_zip(zip);
-      //jQuery('#zipcodeform').slideToggle('fast');
+      jQuery('#zipcodeform').slideToggle('fast');
     });
   }
   bind_correct_links();
