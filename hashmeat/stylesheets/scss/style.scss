@@ -87,12 +87,16 @@ textarea {
     }
 }
 
-#introduction, #slide1, #slide2, #slide3, #slide4 {
+#introduction, .slide{
 	margin: 100px 0 0 0;
-    padding: 100px;
+    padding: 50px 450px 50px 50px;
 	height: 500px;
-	width: 100%;
+	/*width: 100%;*/
     
+}
+
+.slide h1 {
+    margin-bottom: 50px;
 }
 
 .alt{
@@ -113,4 +117,13 @@ textarea {
     height: 160px;
     width: 150px;
     margin: 10px;
+}
+
+.tagcloudlink {
+    margin: 10px;
+    color: #333333;
+}
+
+#tagcloud {
+    line-height:2.5em;
 }
