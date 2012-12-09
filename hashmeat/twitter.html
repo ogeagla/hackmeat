@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=620">
 <title>HASHMEAT </title>
 <link href="css/bootstrap.css" rel="stylesheet">
+<link rel="stylesheet" href="stylesheets/compiled/style.css" type="text/css"/>
 <script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
 <script type="text/javascript" src="js/twitter.js"></script>
 <script type="text/javascript" src="js/twitterlive.js"></script>
@@ -19,7 +20,10 @@
    <a id="tweet-button" class="btn btn-info btn-large btn-block" href="javascript:void(0);" target="_blank" rel="nofollow">Tweet</a>
 
     <div id="reps">
-      <p>Finding your location: <span id="status">checking...</span></p>
+    </div>
+
+    <div id="correct"><a id="showform" href="javascript:void();">Enter your zipcode to find your representatives.</a>
+      <div id="zipcodeform">zipcode <input id='zip' type='text'><a class='btn btn-info'>Enter</a></div>
     </div>
 
     <div id="twitterstream">

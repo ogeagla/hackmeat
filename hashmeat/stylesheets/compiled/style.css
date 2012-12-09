@@ -63,3 +63,6 @@ textarea {
 #fakeslide {
   height: 500px;
   width: 1600px; }
+
+#zipcodeform {
+  display: none; }
