@@ -27,7 +27,7 @@ jQuery(function() {
 	$.getJSON(urlStr1, 
 	function(data) {
 		write_representatives(data);
-		bind_tweet_button("test_message", get_reps_data(data));
+		bind_tweet_button("test_message", get_reps_handles(data));
 	});
   }
 
