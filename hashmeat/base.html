@@ -2,66 +2,82 @@
 <html>
   <head>
     <link rel="stylesheet" href="stylesheets/compiled/style.css" type="text/css"/>
+    <link rel="stylesheet" type="text/css" href="stylesheets/fonts/knowfont/stylesheet.css" />
     <script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
     <script type="text/javascript" src="js/jquery.scrollTo-1.4.2-min.js"></script>
     <script type="text/javascript" src="js/jquery.pitchdeck.js"></script>
     <script type="text/javascript" src="js/waypoints.min.js"></script>
     <script type="text/javascript" src="js/start.js"></script>
 
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <script type="text/javascript" src="js/jquery-1.6.4.min.js"></script>
+    <script type="text/javascript" src="js/twitter.js"></script>
+    <script type="text/javascript" src="js/twitterlive.js"></script>
+
+
   </head>
   <body>
   	<div id="twitternav">
-		twitter here
-	</div>
-    <table id="navbar">
-      <tr>
-	<center>
-	<td id="navcenter">
-	  <a href="#slide1" class="nav" title="#slide1">
-	   
-	  	
-	    1
-	  </a>
-	  <a href="#slide2" class="nav alt" title="#slide2">
-	  	 
-	    2
-	  </a>
-	  <a href="#slide3" class="nav" title="#slide3">
-	    3
-	  </a>
-	  <a href="#slide4" class="nav alt" title="#slide4">
-	    4
-	  </a>
+		<section id="wrapper">
 
-	</td></center>
-      </tr>
-    </table>
+        <header>
+          <h1>Tweet About Meat</h1>
+        </header>
 
-    <div class="slide" id="slide1">
-      <!--<img src="img/test.jpeg" class="slideImage"/>-->
-      test1
-      <iframe src="https://www.youtube.com/embed/FiE63LycZek?html5=1" class="youtube" type="text/html" width="160" height="96" frameborder="0"></iframe>
-    </div>
-    
-    <div class="slide" id="slide2">
-      <!--<audio src="media/farmer_excerpt.mp3" controls></audio>-->
-      <audio controls preload="auto" autobuffer>
-   		<source src="media/farmer_excerpt.mp3" type='audio/mpeg; codecs="mp3"'>
-   		<source src="media/farmer_excerpt.wav" type='audio/wave;'>
-   		
-   
-	</audio>
-      test2
-    </div>
-    <div class="slide" id="slide3">
-      test3
-    </div>
-    <div class="slide" id="slide4">
-      test4
-    </div>
-	<div id="fakeslide">
-	
-	</div>
+       <a id="tweet-button" class="btn btn-info btn-large btn-block" href="javascript:void(0);" target="_blank" rel="nofollow">Tweet</a>
 
-  </body>
+        <div id="reps">
+        </div>
+
+        <div id="correct"><a id="showform" href="javascript:void();">Enter your zipcode to find your representatives.</a>
+          <div id="zipcodeform">zipcode <input id='zip' type='text'><a class='btn btn-info'>Enter</a></div>
+        </div>
+
+        <div id="twitterstream">
+        </div>
+
+    </section>
+    </div>
+    <div id="navbar">
+  	<div id="navcenter">
+  	  <a href="#slide1" class="nav" title="#slide1">
+  	    one
+  	  </a>
+  	  <a href="#slide2" class="nav" title="#slide2">
+  	    two
+  	  </a>
+  	  <a href="#slide3" class="nav" title="#slide3">
+  	    three
+  	  </a>
+  	  <a href="#slide4" class="nav" title="#slide4">
+  	    four
+  	  </a>
+
+  	</div>
+  </div>
+  <div class="slide" id="introduction">
+    <h1>Conglomerate farm overview</h1>
+  </div>
+  <div class="slide alt" id="slide1">
+    <!--<img src="img/test.jpeg" class="slideImage"/>-->
+    <h1>What is the deal?</h1>
+    <iframe src="https://www.youtube.com/embed/FiE63LycZek?html5=1" class="youtube" type="text/html" width="160" height="96" frameborder="0"></iframe>
+  </div>
+  <div class="slide" id="slide2">
+    <h1>How does this impact health?</h1>
+    <audio controls preload="auto" autobuffer>
+    <source src="media/farmer_excerpt.mp3" type='audio/mpeg; codecs="mp3"'>
+    <source src="media/farmer_excerpt.wav" type='audio/mpeg; codecs="audio/wav"'>
+  </div>
+  <div class="slide alt" id="slide3">
+    <h1>What happens to farmers?</h1>
+  </div>
+  <div class="slide" id="slide4">
+    <h1>What can I do?</h1>
+  </div>
+  <div id="fakeslide">
+
+  </div>
+
+</body>
 </html>
