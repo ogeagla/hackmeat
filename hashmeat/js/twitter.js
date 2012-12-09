@@ -11,9 +11,10 @@ jQuery(function() {
                   policy: "Time to break up the monopolies with policy.",
                   badges: "Show your support for better meat production.",};
 
+  var handles = "";
+
   $(".nav").click(function(){
       var sid = $(this).attr("title");
-      //window.location.hash = sid;
       switchTwitterMessage(sid);
     });
   $(document).scroll(function(){
@@ -45,7 +46,7 @@ jQuery(function() {
         case "#pollution":
           customMessage = tweets['pollution'];        
           break;
-        case "#conglomeration":
+        case "#economy":
           customMessage = tweets['economy'];
           break;
         case "#power":
@@ -62,7 +63,6 @@ jQuery(function() {
           break;
       }
       console.log(customMessage);
-      var handles = get_reps_handles();
       bind_tweet_button(customMessage, handles);
     }
 
@@ -76,8 +76,8 @@ jQuery(function() {
 	
   	$.getJSON(urlStr1, 
 	  function(data) {
-		  var handles = write_representatives(data);
-		  bind_tweet_button(tweets["main"], handles);
+		  handles = write_representatives(data);
+		  bind_tweet_button(tweets["default"], handles);
 	  });
   }
 
@@ -89,7 +89,7 @@ jQuery(function() {
   
     $.getJSON(urlStr1, 
     function(data) {
-      var handles = write_representatives(data);
+      handles = write_representatives(data);
       bind_tweet_button(tweets["default"], handles);
     });
   }
@@ -126,7 +126,6 @@ jQuery(function() {
 
   function get_reps_handles() {
     var handles = jQuery("#reps").data("handles");
-    //alert(handles);
   }
 
   function bind_tweet_button(message, handles){
