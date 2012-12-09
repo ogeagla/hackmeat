@@ -1,0 +1,15 @@
+Slide 6
+
+shows how changing policies to support an open market for hogs (versus a distorted contracts-based market with consolidated processing operations holding most of the leverage) could yield sustainable prices for farmers
+
+images/contract_policy1.svg
+images/contract_policy2.svg
+action is to toggle between the two on click
+
+Caption:
+<em>You</em> can help change polities to rebalance the market and make hog farming sustainable!
+
+Citation:
+Factory Farm Nation: How American Turned Its Livestock Farms into Factories (2010). Food & Water Watch. http://www.foodandwaterwatch.org/reports/factory-farm-nation/
+Martinez, Steve W. USDA Economic Research Service. "The U.S. Food Marketing Syste: Recent Developments 1997-2006." Economic Research Report Number 42. May 2007.
+USDA NASS. Agricultural Prices Annual Summaries. 1990-2009.
