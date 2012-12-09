@@ -1,17 +1,8 @@
-/* Page Basics */
-
-body {
-    background: #FAF8F3;
-    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
-    color: #030303;
-}
-
-#container {
-    
-}
+/* Header/Footer Basics */
 
 
-#navbar {
+
+#headernav {
     position: fixed;
     display: block;
     top: 200px;
@@ -31,8 +22,6 @@ body {
     float: left;
     margin: 0 auto 0 auto;
     width: 960px;
-    /* background: url(img/header.png) no-repeat -282px 0;*/
-
 }
 
 #intro {
@@ -45,9 +34,25 @@ body {
     display: block;
     margin: 0 auto 0 auto;
     width: 400px;
-    /* background: url(img/header.png) no-repeat -282px 0;*/
-
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+    color: #030303;
 }
+
+.headericon {
+    width: 120px;
+    display: block;
+    float: left;
+    /*border: green solid 1px;*/
+}
+
+.buttonicon {
+    width: 110px;
+    display: block;
+    float: left;
+    /*border: red solid 1px;*/
+}
+
+/*Page Basics */
 
 textarea {
     color: #444;
