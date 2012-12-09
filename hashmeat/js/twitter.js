@@ -1,6 +1,13 @@
 
 jQuery(function() {
 
+  var tweets = {main: "Food monopolies affect all of us!", 
+                companies: "4 companies product 70% of pork.",
+                health: "Diabetes, antibiotic resistance, obesity - brought to you by food monopolies."
+                pollution: "Meat monopolies are shitty.",
+                economy: "You can't support farmers if you're taking money from food monopolies.",
+                tags: "See what people are tweeting about meat."};
+
   function get_representatives(position) {
     urlStr1 = "http://services.sunlightlabs.com/api/legislators.allForLatLong.json";
   	var lat = position.coords.latitude;
@@ -11,8 +18,8 @@ jQuery(function() {
 	
   	$.getJSON(urlStr1, 
 	  function(data) {
-		  write_representatives(data);
-		  bind_tweet_button("test_message", get_reps_handles(data));
+		  var handles = write_representatives(data);
+		  bind_tweet_button(tweets["main"], handles);
 	  });
   }
 
@@ -24,8 +31,8 @@ jQuery(function() {
   
     $.getJSON(urlStr1, 
     function(data) {
-      write_representatives(data);
-      bind_tweet_button("test_message", get_reps_handles(data));
+      var handles = write_representatives(data);
+      bind_tweet_button(tweets["main"], handles);
     });
   }
 
@@ -35,12 +42,13 @@ jQuery(function() {
   }
 
   function errorGeo(msg) {
-    bind_tweet_button("MESSAGE HERE", "");
+    bind_tweet_button(tweets["main"], "");
   }
 
   function write_representatives(json) {
     jQuery("#reps").empty();
     legislators = json.response.legislators;
+    handles = "";
     for (var i = 0; i < legislators.length; i++) {
       var legislator = legislators[i].legislator;
       var rep = jQuery("<div class='rep'></div>").appendTo("#reps");
@@ -49,25 +57,24 @@ jQuery(function() {
       rep.append("<div class='repinfo'>");
       rep.append("<span class='name'>"+legislator.title+" "+legislator.lastname+" ("+legislator.party+")</span>");
       rep.append("</div>");
-    }
-    $("#twitternav").addClass("withreps");
-  }
-
-  function get_reps_handles(json) {
-    legislators = json.response.legislators;
-    handles = "";
-    for (var i = 0; i < legislators.length; i++) {
-      var legislator = legislators[i].legislator;
       if(legislator.twitter_id != null || legislator.twitter_id != ""){
         handles += "@" + legislator.twitter_id + " ";
       }
     }
+    $("#twitternav").addClass("withreps");
+    jQuery("#reps").data("handles", handles);
     return handles;
   }
 
+  function get_reps_handles() {
+    var handles = jQuery("#reps").data("handles");
+    alert(handles);
+  }
+
   function bind_tweet_button(message, handles){
+    jQuery("#tweetmsg").html(message);
     jQuery('#tweet-button').click(function() {
-      window.open("http://twitter.com/share?url=http://www.hashmeat.org&hashtags=hashmeat&text="+encodeURI(message+" "+handles),"tweetwindow","menubar=1,resizable=1,scrollbar=1,height=400, width=560, left=200, top=200");
+      window.open("http://twitter.com/share?url=http://hashmeat.org&hashtags=hashmeat&text="+encodeURI(message+" "+handles),"tweetwindow","menubar=1,resizable=1,scrollbar=1,height=400, width=560, left=200, top=200");
     });
   }
 
