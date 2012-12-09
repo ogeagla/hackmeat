@@ -61,19 +61,28 @@ textarea {
 	border-radius: 5px;
   	position: fixed;
   	right: 25px;
-    top: 85px;
+    top: 65px;
   	width: 300px;
   	height: 450px;
     background-color: #A9B79E;
+    overflow-y:hidden;
+    &.withreps{
+        height: 550px;
+    }
     #reps{
+        display:inline-block;
         .rep{
-            width: 100px;
+            width: 90px;
             padding: 5px;
             display: inline-block;
+            float:right;
             .repinfo{
                 display: block;
             }
         }
+    }
+    #zip-btn{
+        float: right;
     }
 }
 

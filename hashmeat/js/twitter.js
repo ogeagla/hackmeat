@@ -29,7 +29,7 @@ jQuery(function() {
     });
   }
 
-  function success(position) {
+  function successGeo(position) {
     var s = jQuery('#status');
 
     if (s.className == 'success') {
@@ -42,7 +42,7 @@ jQuery(function() {
 
   }
 
-  function error(msg) {
+  function errorGeo(msg) {
     bind_tweet_button("MESSAGE HERE", "");
   }
 
@@ -55,11 +55,10 @@ jQuery(function() {
       bioguide_id = legislator.bioguide_id;
       rep.append("<img class='headshot' src='img/congress/small/"+bioguide_id+".jpg'>");
       rep.append("<div class='repinfo'>");
-      rep.append("<span class='name'>"+legislator.firstname+" "+legislator.middlename+" "+legislator.lastname+"</span>");
-      rep.append("<span class='meta'>"+legislator.title+" "+legislator.state+" ("+legislator.party+")</span>");
-      rep.append("<a href='http://www.twitter.com/"+legislator.twitter_id+"' class='twitter'>@"+legislator.twitter_id+"</a>");
+      rep.append("<span class='name'>"+legislator.title+" "+legislator.lastname+" ("+legislator.party+")</span>");
       rep.append("</div>");
     }
+    $("#twitternav").addClass("withreps");
   }
 
   function get_reps_handles(json) {
@@ -97,7 +96,8 @@ jQuery(function() {
   });
 
   if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(success, error);
+    var a = navigator.geolocation.getCurrentPosition(successGeo, errorGeo);
+    var b = 1;
   } else {
     error('not supported');
   }
