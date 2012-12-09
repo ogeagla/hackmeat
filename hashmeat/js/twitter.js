@@ -85,8 +85,7 @@ jQuery(function() {
   //bind_tweet_button("MESSAGE HERE", "");
 
   jQuery(function(){
-    jQuery('#twitterstream').liveTwitter('"bacon" :(', {limit: 8, imageSize: 32}, function(){
-      jQuery('#twitterstream .loading').remove();
+    jQuery('#twitterstream').liveTwitter('bacon', {limit: 8, imageSize: 32, rate: 1000}, function(){
     });
   });
 
